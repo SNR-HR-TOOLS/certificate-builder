@@ -105,10 +105,10 @@ function SignatureBlock({
         <img
           src={signature}
           alt="signature"
-          className="h-14 object-contain -mb-1 max-w-[200px]"
+          className="h-32 object-contain -mb-10 max-w-[350px] scale-[1.15]"
         />
       ) : (
-        <div className="h-14" />
+        <div className="h-32" />
       )}
       <div className="w-[220px] h-px bg-[#1f2536]/60 mt-1" />
       <p className="mt-2 text-[13px] font-semibold tracking-wide text-[#1f2536]">
@@ -797,11 +797,11 @@ export const PremiumDarkTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                   <img
                     src={props.sigImg}
                     alt="sig"
-                    className="h-12 object-contain -mb-1"
+                    className="h-32 object-contain -mb-10 max-w-[350px] scale-[1.15]"
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                 ) : (
-                  <div className="h-12" />
+                  <div className="h-32" />
                 )}
                 <div className="w-[200px] h-px bg-[#f8f9fa]/30 mt-1" />
                 <p className="mt-2 text-[12px] font-semibold tracking-wide text-white">
@@ -817,11 +817,11 @@ export const PremiumDarkTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                   <img
                     src={props.sigImgRight}
                     alt="sig"
-                    className="h-12 object-contain -mb-1"
+                    className="h-32 object-contain -mb-10 max-w-[350px] scale-[1.15]"
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                 ) : (
-                  <div className="h-12" />
+                  <div className="h-32" />
                 )}
                 <div className="w-[200px] h-px bg-[#f8f9fa]/30 mt-1" />
                 <p className="mt-2 text-[12px] font-semibold tracking-wide text-white">

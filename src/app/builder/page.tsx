@@ -1,5 +1,7 @@
 "use client";
 
+import ceoSign from "@/assets/ceo-sign-final-removebg-preview.png";
+import hrSign from "@/assets/hr-sign-final-removebg-preview.png";
 import snrLogo from "@/assets/snr-logo-without-bg.png";
 import {
   AcademicTemplate,
@@ -36,17 +38,17 @@ type TemplateKey = keyof typeof TEMPLATES;
 /* ─── Main page ────────────────────────────────────────────────── */
 function HomePage() {
   const [logo, setLogo] = useState<string>(snrLogo.src);
-  const [sigImg, setSigImg] = useState<string>("");
-  const [sigImgRight, setSigImgRight] = useState<string>("");
+  const [sigImg, setSigImg] = useState<string>(ceoSign.src);
+  const [sigImgRight, setSigImgRight] = useState<string>(hrSign.src);
   const [title, setTitle] = useState("Certificate of Internship");
   const [name, setName] = useState("D.Karthik");
   const [body, setBody] = useState(
     "This is to certify that D.Karthik has successfully completed an internship at SNR Edatas.\nDuring this period, his/her conduct and performance were found to be satisfactory.\nWe wish him/her all the best for future opportunities.",
   );
   const [period, setPeriod] = useState("1st April 2026 to 31st May 2026");
-  const [ceoName, setCeoName] = useState("Mr. Charles Adams");
+  const [ceoName, setCeoName] = useState("G. Mallikarjuna");
   const [ceoRole, setCeoRole] = useState("Chief Executive Officer");
-  const [hrName, setHrName] = useState("Mr. Charles Adams");
+  const [hrName, setHrName] = useState("Anuradha.A.J");
   const [hrRole, setHrRole] = useState("Human Resource and Management");
   const [serial, setSerial] = useState("HL-34783242");
   const [date, setDate] = useState("31/05/2026");
@@ -173,11 +175,10 @@ function HomePage() {
               <button
                 key={tmpl}
                 onClick={() => setSelectedTemplate(tmpl)}
-                className={`px-3 py-1.5 text-[13px] font-medium rounded-full transition-colors ${
-                  selectedTemplate === tmpl
-                    ? "bg-[#1f2536] text-white"
-                    : "bg-[#f6f2e7] text-[#1f2536] border border-[#d8d4c8] hover:bg-[#ebe5d5]"
-                }`}
+                className={`px-3 py-1.5 text-[13px] font-medium rounded-full transition-colors ${selectedTemplate === tmpl
+                  ? "bg-[#1f2536] text-white"
+                  : "bg-[#f6f2e7] text-[#1f2536] border border-[#d8d4c8] hover:bg-[#ebe5d5]"
+                  }`}
               >
                 {tmpl.replace(/([A-Z])/g, " $1").trim()}
               </button>
@@ -228,14 +229,12 @@ function HomePage() {
               role="switch"
               aria-checked={showWatermark}
               onClick={() => setShowWatermark((v) => !v)}
-              className={`relative inline-flex h-7 w-12 flex-shrink-0 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#b8862e] focus:ring-offset-2 ${
-                showWatermark ? "bg-[#b8862e]" : "bg-[#d8d4c8]"
-              }`}
+              className={`relative inline-flex h-7 w-12 flex-shrink-0 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#b8862e] focus:ring-offset-2 ${showWatermark ? "bg-[#b8862e]" : "bg-[#d8d4c8]"
+                }`}
             >
               <span
-                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform duration-200 ${
-                  showWatermark ? "translate-x-6" : "translate-x-1"
-                }`}
+                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform duration-200 ${showWatermark ? "translate-x-6" : "translate-x-1"
+                  }`}
               />
             </button>
           </div>
@@ -268,7 +267,7 @@ function HomePage() {
             label="Signature Image"
             value={sigImg}
             onChange={setSigImg}
-            onClear={() => setSigImg("")}
+            onClear={() => setSigImg(ceoSign.src)}
             icon={<PenLine className="w-5 h-5" />}
             hint="Optional — shows above the name on the left"
           />
@@ -285,7 +284,7 @@ function HomePage() {
             label="Signature Image"
             value={sigImgRight}
             onChange={setSigImgRight}
-            onClear={() => setSigImgRight("")}
+            onClear={() => setSigImgRight(hrSign.src)}
             icon={<PenLine className="w-5 h-5" />}
             hint="Optional — shows above the name on the right"
           />
